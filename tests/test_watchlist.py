@@ -115,3 +115,19 @@ def test_add_to_watchlist_duplicate_same_film_different_users_allowed(
 
         count = WatchlistEntry.query.filter_by(film_id=sample_film).count()
         assert count == 2
+
+# ── Nonexistent film ─────────────────────────────────────────────────────────
+
+def test_add_to_watchlist_nonexistent_film_raises(app, sample_user):
+    """
+    Adding a film_id that doesn't exist should raise FilmNotFoundError,
+    and should not create a WatchlistEntry as a side effect.
+    """
+    with app.app_context():
+        fake_film_id = 999999
+
+        with pytest.raises(FilmNotFoundError):
+            add_to_watchlist(user_id=sample_user, film_id=fake_film_id)
+
+        count = WatchlistEntry.query.filter_by(user_id=sample_user).count()
+        assert count == 0

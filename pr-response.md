@@ -22,10 +22,10 @@ The full test suite was used to confirm that the new deduplication logic did not
 ## Comment 3 — Missing test
 
 **What I did:**
-
+Created `test_watchlist.py` to test the functions in `watchlist_service.py`. Added `test_add_to_watchlist_nonexistent_film_raises()` function to test code response for when a non-existent film is used in the function
 
 **How I verified:**
-
+The full test suite was used to confirm that the new function returned an error when an invalid film ID was used and did not negatively impact the code.
 
 ## Comment 4 — Default visibility
 **My position:**
