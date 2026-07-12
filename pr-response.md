@@ -14,10 +14,10 @@ The full test suite was used to confirm that the function rename did not negativ
 ## Comment 2 — Deduplication
 
 **What I did:**
-
+Modified `watchlist_service.py` to include deduplication logic, changes including additional docstring, exception class, and the check block added to `add_to_watchlist()`.
 
 **How I verified:**
-
+The full test suite was used to confirm that the new deduplication logic did not negativeley impact the code. 
 
 ## Comment 3 — Missing test
 
