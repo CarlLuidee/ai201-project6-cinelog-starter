@@ -52,13 +52,13 @@ An alphabetical sort is more convenient in specific use cases, such as when a us
 ## Comment 6 — 
 
 **What conflicted:**
-
+My local branch and the `origin/main` branch had their own `.gitignore`, which conflicted with each other.
 
 **How I resolved it:**
-
+I resolved the conflict by using my local branch's `.gitignore` config because it has a more thorough ignore list. 
 
 **How I verified no conflict remains:**
-
+I verified that there is no conflict by checking the git status and confirming the rebase has succeeded.  
 
 ## PR Description
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
